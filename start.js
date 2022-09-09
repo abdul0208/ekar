@@ -1,4 +1,4 @@
-console.clear()
+
 const ProductionServer = '10.18.0.5';
 global.PublicIp = '134.209.206.250'
 process.env.NTBA_FIX_319 = 1;
@@ -7,6 +7,8 @@ global.fs = require('fs');
 global._log = require('./app_modules/log.js').log;
 DEBUGMODE = true;
 global.os = require('os');
+global.AWS = require('aws-sdk');
+
 var interfaces = os.networkInterfaces();
 var addresses = [];
 for (var k in interfaces) {
@@ -96,7 +98,7 @@ global.config = [
         queue: 'fleet_02',
         baseUrl: protocol + "//ekarme.locationsolutions.com",
         token: "a322518aadf76972068a3848a66805ce527EE86D8BA65058FE923A6ACF392F2A01F3BC82",
-        operateAs: '',
+        operateAs: 'EKAR_GCC',
         refreshTime: 2000,
         amqpURL: "amqp://ekarmsgadmin:dja4sd5ghwuWdp116@134.209.206.250/ekar" // RabitMQ Recieve Que URL
     },
@@ -145,6 +147,8 @@ LiveScripts("EkarAPI");
 
 global.userTokens = {}
 //Edited on 12/9/2021
+
+
 
 
 
