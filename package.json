@@ -1,0 +1,29 @@
+{
+  "name": "ekar_broker",
+  "version": "2.0.0",
+  "description": "Wialon to Rabbit MQ broker service for EKAR",
+  "main": "start.js",
+  "dependencies": {
+    "amqplib": "^0.7.1",
+    "body-parser": "^1.19.0",
+    "clear-require": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "node-telegram-bot-api": "^0.53.0",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "socket.io": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nishad Kaippally",
+  "license": "ISC"
+}

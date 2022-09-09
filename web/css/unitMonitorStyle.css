@@ -1,0 +1,647 @@
+:root {
+    --left-panel-width:0;
+    --bottomy :20px
+    --inactive-panel: #cbe4ef;
+    --bottom-height: 0;
+    --inputheight: 20px;
+    --top-height: 2.4em;
+    --button-text-color: #444;
+    --button-hover-color: #127fd1;
+    --bgcolor1: #bfa676;
+    --table-header: #ffffff;
+    --table-border-color: #8a8a8a47;
+    --column-hover: #ffd29b;
+    --foreground: #759aa0;
+    --top:40px;
+    /* --foreground: #fffff; */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: #aaa;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+td[col] {
+    transition: .5s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: var(--button-hover-color);
+    padding: 2px;
+    color: #fff;
+}
+thead {
+    background: #55555552;
+    /* padding: 3px; */
+}
+td {
+    border-bottom: 1px dotted;
+ 
+    padding: 2px;
+}
+body {
+    font: 13px Helvetica, Arial;
+    overflow: hidden;
+}
+
+#container {
+    left: 0;
+    right: 0;
+    position: absolute;
+    border: 1px #eadada dotted;
+    bottom: 0px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    background: #444;
+    height: 100%;
+    display: block;
+    border-spacing: unset;
+    margin: 0;
+    padding: 0;
+}
+#top {
+    top: 20px;
+    height: var(--top);
+    z-index: 10;
+    left: 0;
+    right: 0;
+    background: #fff;
+}
+#left {
+    left: 0;
+    top: var(--top);
+    bottom: 20px;
+   
+    background: #f8efef;
+    width: var(--left-panel-width);
+}
+
+#bottom {
+    left: 0;
+    right: 0;
+    bottom: 0px;
+ 
+    background: #e9f1f2;
+    display: in;
+    width: 100%;
+    height: var(--bottom-height);
+}
+
+#right {
+    right: 0px;
+    background: #9ac2e0;
+    right: 0;
+    position: absolute;
+    left:var(--left-panel-width);
+    top: 60px;
+    /* overflow: scroll; */
+    /* display: block; */
+    overflow-y: auto;
+    z-index: 1;
+    bottom: 0;
+}
+
+.defaultStyle {
+    position: absolute;
+    border: 0px solid;
+}
+
+form {
+    background: #000;
+    padding: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+input#m {
+    width: 90%;
+    height: 100%;
+}
+
+form button {
+    width: 10%;
+    background: rgb(130, 224, 255);
+    border: none;
+    height: 100%;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.unit {
+    background-color: #e6e0e0;
+    cursor: pointer;
+    margin: 2px;
+    padding: 2px;
+    color: #676161;
+}
+
+.unit:hover {
+    background-color:var(--button-hover-color)
+}
+#messages li {
+    padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+    background: #eee;
+}
+
+.cuser {
+    background: #90b6b6;
+}
+
+.active {
+    background: #49b33b;
+}
+
+#thisuser {
+    width: 100%;
+}
+
+.right {
+    text-align: right;
+    right: 0;
+}
+
+.left {
+    text-align: left;
+    right: 0;
+}
+
+.msgdiv {
+    background: 1px solid #555;
+    padding: 4px;
+    border: 1px solid #000;
+    display: block;
+    margin: 7px;
+    font-size: 1.5em;
+    display: re;
+}
+
+.user {
+    font-size: 63%;
+    color: #fff;
+    display: inline;
+    background: #777;
+    padding: 4px;
+}
+
+.ts {
+    font-size: 53%;
+    display: inline-block;
+    position: absolute;
+    left: 11px;
+    color: #7a6565;
+}
+
+tr.ui-selected {
+    background-color: #d9db6f !important;
+}
+button.unitbtn {
+    padding: 1px;
+    margin: 1px;
+    font-size: 11px;
+}
+
+#APILauncher {
+    overflow-y: scroll;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background-color: #44444426;
+    padding: 5px;
+}
+
+.tokens {
+    margin: 2px;
+    width: 100%;
+    background-color: #cecda2;
+}
+.navbuttons {
+    padding: 0 8px 0 8px;
+    margin: 4px;
+    background: #9ac2e0;
+    cursor: pointer;
+    transition: .2s;
+    display: inline-block;
+    padding: 6px;
+}
+.navbuttons:hover{
+    background: var(--button-hover-color);
+    color:#fff
+}
+.statusEl{
+    padding: 0px 5px;
+    background: #ffffff99;
+    color: #000;
+    display: inline;
+}
+#account {
+    text-align: right;
+    /* font-weight: bold; */
+    margin: 0 9px 0 0px;
+    position: absolute;
+    right: 0;
+}
+
+td {
+    border: 0.5px dotted #e1dede;
+ 
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 5px 5px;
+    box-shadow: unset;
+    border: #fff 1px solid;
+}
+th.sorting_disabled {
+    font-size: 9px;
+}
+
+#mapDialog {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+div#counter {
+    font-size: 10px;
+    display: inline;
+    float: right;
+    /* background: #555; */
+    width: 40px;
+    /* position: absolute; */
+    color: #fff;
+    right: 0;
+    padding: 2px;
+    text-align: center;
+}
+
+.ffield {
+    display: inline;
+    width: 100%;
+}
+
+
+.ffield input, .ffield label {
+    width: 162px;
+    display: inline-block;
+    padding: 4px;
+    margin: 5px;
+
+    /* height: 26px; */
+    border: unset;
+    /* border-spacing: unset; */
+    line-height: unset;
+    /* font-size: 22px; */
+    color: #000;
+}
+ .ffield label{
+    color: #fff;
+}
+span.key {
+    color: red;
+}
+span.number {
+    color: green;
+}
+
+.code {
+    display: block;
+    margin: 3px;
+    background: #fffefe;
+    color: #626262;
+    padding: 11px;
+    border: 1.5px dotted #b0a8a8;
+}
+.code legend {
+    background: #d7d3d3;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+ 
+
+.icons {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    /* border: 1px solid; */
+    display: inline-flex;
+    padding: 2px;
+    margin: 1px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 1px #443c54 inset;
+}
+.icons:hover{
+box-shadow: 1px 1px 3px #000;
+}
+
+
+.icons[cmd='unitmsg'] {
+   background-image: url(./unitmsg.png);
+}
+.icons[cmd='lock'] {
+   background-image: url(./lock.png);
+}
+.icons[cmd='unlock'] {
+   background-image: url(./unlock.png);
+}
+.icons[cmd='block'] {
+   background-image: url(./block.png);
+}
+.icons[cmd='unblock'] {
+   background-image: url(./unblock.png);
+}
+.icons[cmd='remove'] {
+   background-image: url(./redCross.png);
+}
+
+
+ 
+.resultItem {
+    background-color: #ddd;
+    margin: 2px;
+    font-size: 11px;
+    padding: 2px;
+    color: #2c2525;
+    cursor: pointer;
+}
+.resultItem:hover{
+    background-color: var(--bgcolor1);
+}
+ 
+
+#BrokerSearch {
+    border: none;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    width: 200px;
+}
+
+.thicon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+table.dataTable thead .sorting {
+    background-color: #9ac2e0;
+}
+
+.BrokerdropDown {
+    position: relative;
+    top: 0;
+   
+    height: 18px;
+    display: inline-block;
+}
+
+.dropDownContent{
+    backdrop-filter: blur(2px);
+    padding: 14px;
+    z-index: 10;
+    box-shadow: 0px 2px 5px;
+    display: none;
+ 
+    width: 240px;
+    box-shadow: 2px 2px 10px;
+    background-color: #e7ffe1c7;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    height: 400px;
+    overflow-y: auto;
+}
+ 
+
+ 
+.dropDownContent li {
+    list-style: none;
+    padding: 2px;
+    text-align: left;
+    width: 100%;
+    display: grid;
+}
+.dropDownContent li:hover, #addAll:hover {
+    background: #fff70078;
+    cursor:pointer
+}
+.dropDownContent input {
+    /* padding: 12px; */
+    margin: 3px;
+    width: 19px;
+    height: 19px;
+    vertical-align: bottom;
+} 
+
+
+#searchDiv {
+    width: 209px;
+}
+label[for='search'] {
+  
+    display: block;
+    /* background-color: #953636c4; */
+}
+#BrokerSearch {
+    border: none;
+    height: 13px;
+    position: relative;
+    right: 0;
+    width: 140px;
+    float: right;
+    margin: 1px;
+}
+select#refreshTimeSelect {
+    height: 15px;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+}
+
+#addAll {
+    background-color: #ff0;
+    padding: 2px;
+    text-align: center;
+    border: 1px solid;
+}
+
+#indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2px;
+    background: #1de623;
+    width: 20px;
+    height: 20px;
+    transition: 1s;
+    border-radius: 50%;
+}   
+
+.diricon {
+    background-image: url(./arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 1s;
+    background-color: #779871;
+    border-radius: 50%;
+    vertical-align: inherit;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+.dirval, .diricon {
+    
+        width: 25px;
+        height: 25px;
+        display: block;
+ 
+    
+}
+.flGuage, .flVal{
+    width:100%;
+    height:100%;
+}
+.flGuage{
+    background-color:#443c54
+   
+}
+
+#avgrt {
+    display: inline;
+    color: #000;
+    margin: 0 10px 0;
+    font-family: monospace;
+}
+
+
+div#charts {
+    position: absolute;
+    top: 63px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #3d3c74;
+    z-index: 1;
+}
+
+.chartRow {
+    /* position: relative; */
+    background-color: #dcd7d7;
+    padding: 2px;
+    /* width: 100%; */
+    height: 40px;
+    margin: 0;
+    /* transition: .3s; */
+    padding: 1px;
+    /* border: 1px solid; */
+}
+
+
+#StatChartDiv {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    bottom: 50px;
+    /* height: 50px; */
+    z-index: 1000;
+    /* background: #c1cb4a80; */
+    left: 50px;
+}
+
+.doorStatus{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+td[col='Door Status'] {
+    position: relative;
+}
+#custom_units td {
+    height: 29px;
+    font-size: 1;
+}
+
+.dataTable {
+    font-size: 6px;
+    border: 0;
+    padding: 0;
+    border-spacing: unset;
+}
+
+#Qcontent{
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    bottom: 40px;
+    top: 30px;
+}
+tbody {
+    font-size: 21px;
+    font-family: serif;
+}
+ 
+
+[role=dialog] {
+    z-index: 13;
+}
+
+button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+    float: right;
+   
+    
+}
+
+.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix.ui-draggable-handle {
+    padding: 5px;
+    margin: 2px;
+}
+
+.ui-dialog-buttonset {
+    text-align: right;
+    /* padding: 6px; */
+    /* background: #9ac2e0; */
+}
+
+.ui-tooltip {
+    width: auto;
+    margin: 2px;
+    padding: 11px;
+    max-width: 400px;
+}

@@ -1,0 +1,47 @@
+thisFolder = __dirname.split('\\')[__dirname.split('\\').length - 1]
+thisfile = __filename.split('\\')[__filename.split('\\').length - 1]
+_log(thisFolder, thisfile)
+global.custom_template = {
+    "timestamp": "recorded_at",
+    "ident": "device_id",
+    "location_solutions": "provider",
+    "engine.ignition.status": "ignition",
+    "position.latitude": "gps_latitude",
+    "position.longitude": "gps_longitude",
+    "position.direction": "direction",
+    'custom.text': "ack",
+    "fuel.volume": "fuel_level",
+    "vehicle.mileage": "mileage",
+    "position.speed": "speed",
+    "custom.io_2": "lights",
+    "custom.io_90": "door_status",
+    'external.powersource.voltage': "battery_voltage",
+    "custom.io_380": "immobilization",
+    "custom.ble_count": "tag_count"
+
+}
+
+
+global.ApiResponse = function (req, res) {
+    _log(req.body.length)
+    for (i in req.body) {
+        var m = req.body[i];
+        // _log(m)
+        var o = {}
+        for (k in m) {
+
+            mv = m[k];
+            // _log(k, mv, custom_template[k])
+            if (typeof custom_template[k] !== 'undefined') {
+                if (mv == true) mv = 1
+                if (mv == false) mv = 0
+                o[custom_template[k]] = mv
+                // _log(k, custom_template[k], mv)
+            }
+
+
+        }
+        _log(o)
+    }
+    res.sendStatus(200)
+}
